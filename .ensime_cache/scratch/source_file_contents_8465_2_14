@@ -1,0 +1,4 @@
+package com.metacodez.dslstreaming.node
+
+sealed trait ChopstickState
+case object Taken ex

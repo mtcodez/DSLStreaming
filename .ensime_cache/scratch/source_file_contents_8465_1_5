@@ -1,0 +1,22 @@
+package com.metacodez.dslstreaming.Node
+import akka.actor.Actor
+import akka.actor.ActorSystem
+import akka.actor.Props
+
+/**
+  * Created by Mante Luo on 11/23/15.
+  */
+class Node extends Actor {
+  def receive = {
+    case "hello" => println("hello there.")
+    case _ => println("unsupported!")
+  }
+}
+
+object Main extends App {
+  val system = ActorSystem("HelloSystem")
+  val helloActor = system.actorOf(Props[Node], name = "helloactor")
+  helloActor ! "hello"
+  helloActor ! "chedan"
+  hel
+}
